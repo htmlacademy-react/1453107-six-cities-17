@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
 * Студент: [Людмила Губанова](https://up.htmlacademy.ru/react/17/user/1453107).
-* Наставник: `Неизвестно`.
+* Наставник: [Юлия Волкова](https://htmlacademy.ru/profile/julie_volkova).
 
 ---
 
