@@ -1,5 +1,9 @@
-import { PreviewOffer } from '../../types';
+import { Link } from 'react-router-dom';
+
 import PlaceCard from '../place-card/place-card';
+
+import { AppRoute } from '../../const';
+import { PreviewOffer } from '../../types';
 
 type FavoritesListProps = {
   favorites: PreviewOffer[];
@@ -16,9 +20,9 @@ function FavoritesListItem({city, locations}: FavoritesListItemProps): JSX.Eleme
     <li className="favorites__locations-items">
       <div className="favorites__locations locations locations--current">
         <div className="locations__item">
-          <a className="locations__item-link" href="#">
+          <Link className="locations__item-link" to={AppRoute.Main}>
             <span>{city}</span>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="favorites__places">
