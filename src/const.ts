@@ -1,3 +1,5 @@
+import { DataType } from './types';
+
 const GalleryPictures = [
   {
     src: 'img/room.jpg',
@@ -25,9 +27,14 @@ const GalleryPictures = [
   },
 ] as const;
 
-const SortingItems = ['Popular', 'Price: low to high', 'Price: high to low', 'Top rated first'] as const;
+const SortingItems = [
+  'Popular',
+  'Price: low to high',
+  'Price: high to low',
+  'Top rated first'
+] as const;
 
-const Locations = {
+const Location = {
   Paris: 'Paris',
   Cologne: 'Cologne',
   Brussels: 'Brussels',
@@ -36,13 +43,13 @@ const Locations = {
   Dusseldorf: 'Dusseldorf'
 } as const;
 
-const Settings = {
+const Setting = {
   OffersCount: 5,
-  DefaultLocation: Locations.Amsterdam,
+  DefaultLocation: Location.Amsterdam,
   DefaultSortingItem: SortingItems[0],
 } as const;
 
-const BookmarkButtonData = {
+const BookmarkButtonData: DataType = {
   'place-card': {
     class: 'place-card',
     width: 18,
@@ -55,7 +62,7 @@ const BookmarkButtonData = {
   },
 } as const;
 
-const LogoData = {
+const LogoData: DataType = {
   'header': {
     width: 81,
     height: 41,
@@ -71,12 +78,28 @@ const ReviewsTextLimits = {
   max: 300,
 } as const;
 
+const AppRoute = {
+  Main: '/',
+  Login : '/login',
+  Favorites : '/favorites',
+  Offer: '/offer/:offerId',
+  NotFound: '*',
+} as const;
+
+const AuthorizationStatus = {
+  Auth: 'AUTH',
+  NoAuth: 'NO_AUTH',
+  Unknown: 'UNKNOWN',
+} as const;
+
 export {
   GalleryPictures,
-  Settings,
-  Locations,
+  Setting,
+  Location,
   SortingItems,
   BookmarkButtonData,
   LogoData,
   ReviewsTextLimits,
+  AppRoute,
+  AuthorizationStatus,
 };

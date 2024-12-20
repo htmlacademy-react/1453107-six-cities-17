@@ -1,33 +1,33 @@
-import Header from '../../components/header/header';
+import HelmetTitle from '../../components/helmet-title/helmet-title';
+
 import LocationsList from '../../components/locations-list/locations-list';
 import Cities from '../../components/cities/cities';
 import Map from '../../components/map/map';
 import MainEmpty from '../../components/main-empty/main-empty';
 
-import { PreviewOffer, LocationType, LoggedUser } from '../../types';
+import { PreviewOffer, LocationType } from '../../types';
 
 type MainPageProps = {
   selectedLocation: LocationType;
   offersCount: number;
   offersData: PreviewOffer[];
-  isLogged: boolean;
-  user: LoggedUser;
 };
 
-function MainPage({selectedLocation, offersCount, offersData, isLogged, user}: MainPageProps): JSX.Element {
+
+function MainPage({selectedLocation, offersCount, offersData }: MainPageProps): JSX.Element {
 
   const isEmpty = !offersData.length;
 
   return(
-    <div className="page page--gray page--main">
-      <Header isMainPage isLogged={isLogged} user={user} />
+    <>
+      <HelmetTitle pageTitle='Main Page' />
 
-      <main className={`page__main page__main--index ${isEmpty && 'page__main--index-empty'}`}>
+      <main className={`page__main page__main--index ${isEmpty ? 'page__main--index-empty' : ''}`}>
 
         <LocationsList selectedLocation={selectedLocation}/>
 
         <div className="cities">
-          <div className={`cities__places-container container ${isEmpty && 'cities__places-container--empty'}`}>
+          <div className={`cities__places-container container ${isEmpty ? 'cities__places-container--empty' : ''}`}>
 
             {isEmpty
               ? <MainEmpty selectedLocation={selectedLocation}/>
@@ -40,7 +40,7 @@ function MainPage({selectedLocation, offersCount, offersData, isLogged, user}: M
           </div>
         </div>
       </main>
-    </div>
+    </>
   );
 }
 

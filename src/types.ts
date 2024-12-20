@@ -1,11 +1,18 @@
-import { Locations, SortingItems } from './const';
+import { Location, SortingItems, AuthorizationStatus, AppRoute } from './const';
 
-export type LocationType = typeof Locations[keyof typeof Locations];
+export type LocationType = typeof Location[keyof typeof Location];
 export type SortingItemsType = typeof SortingItems[number];
+export type AuthorizationStatusType = typeof AuthorizationStatus[keyof typeof AuthorizationStatus];
+export type AppRouteType = typeof AppRoute[keyof typeof AppRoute];
 
 export type MapPlacementClass = 'offer' | 'cities';
 export type CardPlacementClass = 'offer' | 'cities' | 'favorites';
+export type StarRatingPlacementClass = 'place-card' | 'offer';
 export type BookmarkButtonPlacementClass = 'place-card' | 'offer-page';
+
+export type DataType = {
+  [key: string]: {class?: string; width: number; height: number};
+}
 
 type Location = {
   latitude: number;

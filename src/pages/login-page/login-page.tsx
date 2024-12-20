@@ -1,4 +1,5 @@
-import Header from '../../components/header/header';
+import HelmetTitle from '../../components/helmet-title/helmet-title';
+
 import LocationsItem from '../../components/locations-item/locations-item';
 import LoginForm from '../../components/login-form/login-form';
 
@@ -11,9 +12,8 @@ type LoginPageProps = {
 function LoginPage({selectedLocation}: LoginPageProps): JSX.Element {
 
   return(
-    <div className="page page--gray page--login">
-
-      <Header isLoginPage />
+    <>
+      <HelmetTitle pageTitle='Login Page' />
 
       <main className="page__main page__main--login">
         <div className="page__login-container container">
@@ -29,7 +29,7 @@ function LoginPage({selectedLocation}: LoginPageProps): JSX.Element {
 
         </div>
       </main>
-    </div>
+    </>
   );
 }
 

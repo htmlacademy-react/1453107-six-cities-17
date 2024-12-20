@@ -1,0 +1,22 @@
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+  height: 60vh;
+}
+
+.notfound__title {
+  font-size: 3rem;
+}
+
+.notfound__link {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.notfound__link:hover {
+  text-shadow: .5px 0 0, -.5px 0 0;
+}

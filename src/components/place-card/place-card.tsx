@@ -1,6 +1,10 @@
-import { PreviewOffer } from '../../types';
+import { generatePath, Link } from 'react-router-dom';
+
 import BookmarkButton from '../bookmark-button/bookmark-button';
-import PlaceRating from '../rating-star/rating-star';
+import StarRating from '../star-rating/star-rating';
+
+import { AppRoute } from '../../const';
+import { PreviewOffer } from '../../types';
 
 type PlaceCardProps = {
   placement: string;
@@ -8,6 +12,9 @@ type PlaceCardProps = {
 }
 
 function PlaceCard({placement, offer}: PlaceCardProps): JSX.Element {
+
+  const offerPage = generatePath(AppRoute.Offer, {offerId: offer.id});
+
   return (
     <article className={`${placement}__card place-card`}>
 
@@ -18,9 +25,9 @@ function PlaceCard({placement, offer}: PlaceCardProps): JSX.Element {
       )}
 
       <div className={`${placement}__image-wrapper place-card__image-wrapper`}>
-        <a href="#">
+        <Link to={offerPage}>
           <img className="place-card__image" src={offer.previewImage} width="260" height="200" alt="Place image" />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -33,10 +40,10 @@ function PlaceCard({placement, offer}: PlaceCardProps): JSX.Element {
 
         </div>
 
-        <PlaceRating rating={offer.rating} />
+        <StarRating rating={offer.rating} placement={'place-card'}/>
 
         <h2 className="place-card__name">
-          <a href="#">{offer.title}</a>
+          <Link to={offerPage}>{offer.title}</Link>
         </h2>
         <p className="place-card__type">{offer.type}</p>
       </div>

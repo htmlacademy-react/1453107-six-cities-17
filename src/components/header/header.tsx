@@ -1,12 +1,13 @@
 import Logo from '../logo/logo';
 import HeaderNav from '../header-nav/header-nav';
+
 import { LoggedUser } from '../../types';
 
 type HeaderProps = {
   isLoginPage?: boolean;
   isMainPage?: boolean;
   isLogged?: boolean;
-  user: LoggedUser;
+  user?: LoggedUser;
 }
 
 function Header({isLoginPage, isMainPage, isLogged, user}: HeaderProps): JSX.Element {

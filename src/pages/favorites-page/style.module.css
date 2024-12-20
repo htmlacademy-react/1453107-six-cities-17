@@ -1,0 +1,12 @@
+.page__main--full{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.favorites--full {
+  height: 100%;
+}
