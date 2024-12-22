@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 import App from './components/app/app';
 
-import { Settings } from './const';
+import { Setting } from './const';
 
 import MOCK_OFFERS from './mock-data/mock-offers';
 import MOCK_OFFER from './mock-data/mock-offer';
@@ -17,8 +17,8 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App
-      selectedLocation = {Settings.DefaultLocation}
-      offersCount = {Settings.OffersCount}
+      selectedLocation = {Setting.DefaultLocation}
+      offersCount = {Setting.OffersCount}
       offersData = {MOCK_OFFERS}
       selectedOffer= {MOCK_OFFER}
       favorites = {MOCK_FAVORITE}

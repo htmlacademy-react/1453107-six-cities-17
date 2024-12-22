@@ -1,4 +1,4 @@
-import { SortingItems, Settings } from '../../const';
+import { SortingItems, Setting } from '../../const';
 
 type SortingItemProps = {
   sortingType: string;
@@ -6,7 +6,7 @@ type SortingItemProps = {
 
 function SortingItem({sortingType}: SortingItemProps): JSX.Element {
 
-  const isActive = sortingType === Settings.DefaultSortingItem ? 'places__option--active' : '';
+  const isActive = sortingType === Setting.DefaultSortingItem ? 'places__option--active' : '';
 
   return(
     <li className={`places__option ${isActive}`} tabIndex={0}>{sortingType}</li>
@@ -16,10 +16,10 @@ function SortingItem({sortingType}: SortingItemProps): JSX.Element {
 function SortingForm(): JSX.Element {
   return(
     <form className="places__sorting" action="#" method="get">
-      <span className="places__sorting-caption">Sort by</span>
+      <span className="places__sorting-caption">Sort by&nbsp;</span>
       <span className="places__sorting-type" tabIndex={0}>
 
-        {Settings.DefaultSortingItem}
+        {Setting.DefaultSortingItem}
 
         <svg className="places__sorting-arrow" width="7" height="4">
           <use xlinkHref="#icon-arrow-select"></use>

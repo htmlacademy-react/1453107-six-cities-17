@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+
+import { AppRoute } from '../../const';
 import { LocationType } from '../../types';
 
 type LocationsItemProps = {
@@ -8,9 +11,9 @@ type LocationsItemProps = {
 function LocationsItem({locationName, isActive}: LocationsItemProps): JSX.Element {
   return(
     <li className="locations__item">
-      <a className={`locations__item-link tabs__item ${isActive && 'tabs__item--active'}`} href="#">
+      <Link className={`locations__item-link tabs__item ${isActive && 'tabs__item--active'}`} to={AppRoute.Main}>
         <span>{locationName}</span>
-      </a>
+      </Link>
     </li>
   );
 }

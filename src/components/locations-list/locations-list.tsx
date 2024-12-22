@@ -1,6 +1,6 @@
 import LocationsItem from '../locations-item/locations-item';
 
-import { Locations } from '../../const';
+import { Location } from '../../const';
 import { LocationType } from '../../types';
 
 type LocationsListProps = {
@@ -14,7 +14,7 @@ function LocationsList({selectedLocation}: LocationsListProps): JSX.Element {
       <div className="tabs">
         <section className="locations container">
           <ul className="locations__list tabs__list">
-            {Object.values(Locations).map((locationName) => <LocationsItem key={locationName} locationName={locationName} isActive={locationName === selectedLocation}/>)}
+            {Object.values(Location).map((locationName) => <LocationsItem key={locationName} locationName={locationName} isActive={locationName === selectedLocation}/>)}
           </ul>
         </section>
       </div>

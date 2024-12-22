@@ -1,4 +1,4 @@
-import PlaceRating from '../rating-star/rating-star';
+import StarRating from '../star-rating/star-rating';
 import OfferForm from '../offer-form/offer-form';
 
 import { Comment } from '../../types';
@@ -28,7 +28,7 @@ function OfferReviewItem({comment}: OfferReviewItemProps): JSX.Element {
       </div>
       <div className="reviews__info">
 
-        <PlaceRating rating={comment.rating} />
+        <StarRating rating={comment.rating} placement={'place-card'} />
 
         <p className="reviews__text">
           {comment.comment}

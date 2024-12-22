@@ -1,29 +1,28 @@
-import Header from '../../components/header/header';
+import HelmetTitle from '../../components/helmet-title/helmet-title';
+
 import OfferGallery from '../../components/offer-gallery/offer-gallery';
 import OfferFeatures from '../../components/offer-features/offer-feature';
 import OfferInside from '../../components/offer-inside/offer-inside';
 import OfferHostInfo from '../../components/offer-host-info/offer-host-info';
 import OfferReviews from '../../components/offer-reviews/offer-reviews';
 import OfferNearPlaces from '../../components/offer-near-places/offer-near-places';
-import PlaceRating from '../../components/rating-star/rating-star';
+import StarRating from '../../components/star-rating/star-rating';
 import BookmarkButton from '../../components/bookmark-button/bookmark-button';
 import Map from '../../components/map/map';
 
 import MOCK_COMMENTS from '../../mock-data/mock-comments';
 import MOCK_OFFERS_NEAR from '../../mock-data/mock-offers-near';
 
-import { LoggedUser, SelectedOffer } from '../../types';
+import { SelectedOffer } from '../../types';
 
 type OfferPageProps = {
   selectedOffer: SelectedOffer;
-  isLogged: boolean;
-  user: LoggedUser;
 };
 
-function OfferPage({selectedOffer, isLogged, user}: OfferPageProps): JSX.Element {
+function OfferPage({selectedOffer}: OfferPageProps): JSX.Element {
   return(
-    <div className="page">
-      <Header isLogged={isLogged} user={user} />
+    <>
+      <HelmetTitle pageTitle='Offer Page' />
 
       <main className="page__main page__main--offer">
         <section className="offer">
@@ -48,7 +47,7 @@ function OfferPage({selectedOffer, isLogged, user}: OfferPageProps): JSX.Element
 
               </div>
 
-              <PlaceRating rating={selectedOffer.rating} />
+              <StarRating rating={selectedOffer.rating} placement={'offer'} />
 
               <OfferFeatures
                 type={selectedOffer.type}
@@ -78,7 +77,7 @@ function OfferPage({selectedOffer, isLogged, user}: OfferPageProps): JSX.Element
         </div>
 
       </main>
-    </div>
+    </>
   );
 }
 
