@@ -19,11 +19,12 @@ type AppProps = {
   offersCount: number;
   offersData: PreviewOffer[];
   selectedOffer: SelectedOffer;
+  offersNearData: PreviewOffer[];
   favorites: PreviewOffer[];
   user: LoggedUser;
 };
 
-function App({selectedLocation, offersCount, offersData, selectedOffer, favorites, user}: AppProps): JSX.Element {
+function App({selectedLocation, offersCount, offersData, selectedOffer, offersNearData, favorites, user}: AppProps): JSX.Element {
 
   const userStatus = AuthorizationStatus.Auth;
   const isUserLogged = userStatus === AuthorizationStatus.Auth;
@@ -81,6 +82,7 @@ function App({selectedLocation, offersCount, offersData, selectedOffer, favorite
             <Route path={AppRoute.Offer} element={
               <OfferPage
                 selectedOffer={selectedOffer}
+                offersNearData={offersNearData}
               />
             }
             />

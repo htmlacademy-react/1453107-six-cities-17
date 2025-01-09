@@ -19,7 +19,7 @@ const MOCK_FAVORITE = [
     },
     'isFavorite': true,
     'isPremium': false,
-    'rating': 4,
+    'rating': 4.4,
     'previewImage': 'https://16.design.htmlacademy.pro/static/hotel/2.jpg'
   },
   {
@@ -42,7 +42,7 @@ const MOCK_FAVORITE = [
     },
     'isFavorite': true,
     'isPremium': false,
-    'rating': 4,
+    'rating': 4.2,
     'previewImage': 'https://16.design.htmlacademy.pro/static/hotel/3.jpg'
   },
   {
@@ -65,7 +65,7 @@ const MOCK_FAVORITE = [
     },
     'isFavorite': true,
     'isPremium': false,
-    'rating': 4,
+    'rating': 4.6,
     'previewImage': 'https://16.design.htmlacademy.pro/static/hotel/4.jpg'
   }
 ];

@@ -68,6 +68,29 @@ const MOCK_OFFERS_NEAR = [
     'isPremium': false,
     'rating': 2.1
   },
+  {
+    'id': '79f386bc-09b4-40e8-a099-77d98be34a19',
+    'title': 'Penthouse, 4-5 rooms + 5 balconies',
+    'type': 'apartment',
+    'price': 999,
+    'previewImage': 'https://16.design.htmlacademy.pro/static/hotel/19.jpg',
+    'city': {
+      'name': 'Paris',
+      'location': {
+        'latitude': 48.85661,
+        'longitude': 2.351499,
+        'zoom': 13
+      }
+    },
+    'location': {
+      'latitude': 48.85761,
+      'longitude': 2.358499,
+      'zoom': 16
+    },
+    'isFavorite': false,
+    'isPremium': false,
+    'rating': 1.1
+  },
 ];
 
 

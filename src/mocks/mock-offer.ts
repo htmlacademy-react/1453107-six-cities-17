@@ -18,7 +18,7 @@ const MOCK_OFFER = {
   },
   'isFavorite': false,
   'isPremium': false,
-  'rating': 4,
+  'rating': 4.5,
   'description': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
   'bedrooms': 3,
   'goods': [

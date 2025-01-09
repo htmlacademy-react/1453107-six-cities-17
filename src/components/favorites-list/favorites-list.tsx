@@ -48,6 +48,7 @@ function FavoritesList({favorites}: FavoritesListProps): JSX.Element {
     }
   }
 
+
   return(
     <ul className="favorites__list">
 

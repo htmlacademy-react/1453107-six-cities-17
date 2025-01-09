@@ -10,16 +10,16 @@ import StarRating from '../../components/star-rating/star-rating';
 import BookmarkButton from '../../components/bookmark-button/bookmark-button';
 import Map from '../../components/map/map';
 
-import MOCK_COMMENTS from '../../mock-data/mock-comments';
-import MOCK_OFFERS_NEAR from '../../mock-data/mock-offers-near';
+import MOCK_COMMENTS from '../../mocks/mock-comments';
 
-import { SelectedOffer } from '../../types';
+import { PreviewOffer, SelectedOffer } from '../../types';
 
 type OfferPageProps = {
   selectedOffer: SelectedOffer;
+  offersNearData: PreviewOffer[];
 };
 
-function OfferPage({selectedOffer}: OfferPageProps): JSX.Element {
+function OfferPage({selectedOffer, offersNearData}: OfferPageProps): JSX.Element {
   return(
     <>
       <HelmetTitle pageTitle='Offer Page' />
@@ -73,7 +73,7 @@ function OfferPage({selectedOffer}: OfferPageProps): JSX.Element {
         </section>
 
         <div className="container">
-          <OfferNearPlaces offersNear={MOCK_OFFERS_NEAR}/>
+          <OfferNearPlaces offersNear={offersNearData}/>
         </div>
 
       </main>
