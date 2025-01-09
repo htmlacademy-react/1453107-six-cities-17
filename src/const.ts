@@ -1,4 +1,4 @@
-import { DataType } from './types';
+import { DataType, Review } from './types';
 
 const GalleryPictures = [
   {
@@ -45,8 +45,11 @@ const Location = {
 
 const Setting = {
   OffersCount: 5,
+  OffersNearCount: 3,
   DefaultLocation: Location.Amsterdam,
   DefaultSortingItem: SortingItems[0],
+  CommentMaxLength: 400,
+  CommentMinLength: 20,
 } as const;
 
 const BookmarkButtonData: DataType = {
@@ -92,6 +95,34 @@ const AuthorizationStatus = {
   Unknown: 'UNKNOWN',
 } as const;
 
+const StarRatingData = {
+  Perfect: {
+    rating: 5,
+    title: 'perfect',
+  },
+  Good: {
+    rating: 4,
+    title: 'good',
+  },
+  NotBad: {
+    rating: 3,
+    title: 'not bad',
+  },
+  Badly: {
+    rating: 2,
+    title: 'badly',
+  },
+  Terribly: {
+    rating: 1,
+    title: 'terribly',
+  },
+} as const;
+
+const InitialReview: Review = ({
+  rating: 0,
+  text: '',
+});
+
 export {
   GalleryPictures,
   Setting,
@@ -102,4 +133,6 @@ export {
   ReviewsTextLimits,
   AppRoute,
   AuthorizationStatus,
+  StarRatingData,
+  InitialReview,
 };

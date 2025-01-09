@@ -7,7 +7,7 @@ type StarRatingProps = {
 
 function StarRating({rating, placement}: StarRatingProps): JSX.Element {
 
-  const starRating = `${100 * rating / 5}%`;
+  const starRating = `${100 * Math.floor(rating) / 5}%`;
 
   return(
     <div className={`${placement}__rating rating`}>

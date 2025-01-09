@@ -5,18 +5,26 @@ import StarRating from '../star-rating/star-rating';
 
 import { AppRoute } from '../../const';
 import { PreviewOffer } from '../../types';
+import { capitalizeFirstLetter } from '../../utils';
+
 
 type PlaceCardProps = {
   placement: string;
   offer: PreviewOffer;
+  onMouseEnter?: (offer: PreviewOffer) => void;
+  onMouseLeave?: (offer: null) => void;
 }
 
-function PlaceCard({placement, offer}: PlaceCardProps): JSX.Element {
+function PlaceCard({placement, offer, onMouseEnter, onMouseLeave}: PlaceCardProps): JSX.Element {
 
   const offerPage = generatePath(AppRoute.Offer, {offerId: offer.id});
 
   return (
-    <article className={`${placement}__card place-card`}>
+    <article
+      className={`${placement}__card place-card`}
+      onMouseEnter={() => onMouseEnter && onMouseEnter(offer)}
+      onMouseLeave={() => onMouseLeave && onMouseLeave(null)}
+    >
 
       { offer.isPremium && (
         <div className="place-card__mark">
@@ -26,7 +34,13 @@ function PlaceCard({placement, offer}: PlaceCardProps): JSX.Element {
 
       <div className={`${placement}__image-wrapper place-card__image-wrapper`}>
         <Link to={offerPage}>
-          <img className="place-card__image" src={offer.previewImage} width="260" height="200" alt="Place image" />
+          <img
+            className="place-card__image"
+            src={offer.previewImage}
+            width="260"
+            height="200"
+            alt={`Place image: ${offer.type} in ${offer.city.name}`}
+          />
         </Link>
       </div>
       <div className="place-card__info">
@@ -45,7 +59,7 @@ function PlaceCard({placement, offer}: PlaceCardProps): JSX.Element {
         <h2 className="place-card__name">
           <Link to={offerPage}>{offer.title}</Link>
         </h2>
-        <p className="place-card__type">{offer.type}</p>
+        <p className="place-card__type">{capitalizeFirstLetter(offer.type)}</p>
       </div>
     </article>
   );

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import HelmetTitle from '../../components/helmet-title/helmet-title';
 
 import LocationsList from '../../components/locations-list/locations-list';
@@ -7,14 +9,20 @@ import MainEmpty from '../../components/main-empty/main-empty';
 
 import { PreviewOffer, LocationType } from '../../types';
 
+
 type MainPageProps = {
   selectedLocation: LocationType;
   offersCount: number;
   offersData: PreviewOffer[];
 };
 
-
 function MainPage({selectedLocation, offersCount, offersData }: MainPageProps): JSX.Element {
+
+  const [activeOffer, setActiveOffer] = useState<PreviewOffer | null>(null);
+
+  function handleOfferChange(offer: PreviewOffer | null): void {
+    setActiveOffer(offer);
+  }
 
   const isEmpty = !offersData.length;
 
@@ -31,7 +39,7 @@ function MainPage({selectedLocation, offersCount, offersData }: MainPageProps): 
 
             {isEmpty
               ? <MainEmpty selectedLocation={selectedLocation}/>
-              : <Cities selectedLocation={selectedLocation} offersCount={offersCount} offersData={offersData} />}
+              : <Cities selectedLocation={selectedLocation} offersCount={offersCount} offersData={offersData} onOfferChangeHandle={handleOfferChange}/>}
 
             <div className="cities__right-section">
               {!isEmpty && <Map placement='cities'/>}

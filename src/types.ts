@@ -14,13 +14,20 @@ export type DataType = {
   [key: string]: {class?: string; width: number; height: number};
 }
 
+export type RatingType = 0 | 1 | 2 | 3 | 4 | 5;
+
+export type Review = ({
+  rating: RatingType;
+  text: string;
+});
+
 type Location = {
   latitude: number;
   longitude: number;
   zoom: number;
 };
 
-export interface Offer {
+export type Offer = {
   id: string;
   title: string;
   type: string;
@@ -35,38 +42,31 @@ export interface Offer {
   rating: number;
 }
 
-export interface PreviewOffer extends Offer {
+export type PreviewOffer = Offer & {
   previewImage: string;
 }
 
-export interface SelectedOffer extends Offer {
+export type SelectedOffer = Offer & {
   description: string;
   bedrooms: number;
   goods: string[];
-  host: {
-    name: string;
-    avatarUrl: string;
-    isPro: boolean;
-  };
+  host: User;
   images: string[];
   maxAdults: number;
 }
 
-export interface User {
+export type User = {
   name: string;
   avatarUrl: string;
   isPro: boolean;
 }
 
-export interface LoggedUser extends User {
-  name: string;
-  avatarUrl: string;
-  isPro: boolean;
+export type LoggedUser = User & {
   email: string;
   token: string;
 }
 
-export interface Comment {
+export type Comment = {
   id: string;
   date: string;
   user: User;
